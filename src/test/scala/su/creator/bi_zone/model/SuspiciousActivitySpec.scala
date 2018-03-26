@@ -19,7 +19,7 @@ class SuspiciousActivitySpec extends FlatSpec with Matchers {
     )
 
     activity.toString shouldBe "127.0.0.1,2015-12-05 20:15:00,2015-12-05 23:15:05," +
-      "\"user1:2015-12-05 20:15:00,user2:2015-12-05 21:15:03,user3:2015-12-05 23:15:05\""
+      "\"user1:2015-12-05 20:15:00,user2:2015-12-05 21:15:03,user3:2015-12-05 23:15:05\"\n"
   }
 
 }

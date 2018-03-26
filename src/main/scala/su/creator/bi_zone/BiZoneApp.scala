@@ -14,11 +14,11 @@ object BiZoneApp extends App {
     Csv.postData(out, result)
   }
 
-  require(args.length >= 2, "USAGE: java -jar bizoneapp.jar <input_file> <output_file> <interval_in_seconds>")
+  require(args.length >= 2, "USAGE: java -jar bizoneapp.jar <input_file> <output_file> <interval_in_seconds = 3600>")
 
   val input = new File(args(0))
   val output = new File(args(1))
-  val interval = args(2)
+  val interval = if (args.length > 2) args(2) else "3600"
 
   try main(input, output, interval.toInt)
   catch {

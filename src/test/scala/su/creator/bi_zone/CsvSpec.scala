@@ -4,13 +4,10 @@ import java.io.File
 import java.time.LocalDateTime
 
 import org.scalatest.{FlatSpec, Matchers}
-import su.creator.bi_zone.TestHelpers._
 import su.creator.bi_zone.model.{LogEntry, Login, SuspiciousActivity}
 import su.creator.bi_zone.utils.DateTimeHelpers
 
-import scala.io.Source
-
-class CsvSpec extends FlatSpec with Matchers {
+class CsvSpec extends FlatSpec with Matchers with TestHelpers {
 
   implicit def strToLDT(string: String): LocalDateTime = LocalDateTime.parse(string, DateTimeHelpers.dtFormatter)
 
@@ -24,7 +21,7 @@ class CsvSpec extends FlatSpec with Matchers {
       LogEntry("Clear94", "31.162.217.43", "2015-11-30 23:17:58"),
       LogEntry("monsterlabel", "179.233.26.140", "2015-11-30 23:18:32")
     )
-    val actualResult = Csv.getData("logins.csv")
+    val actualResult = Csv.getData("/logins.csv")
 
     actualResult shouldBe expectedResult
   }
