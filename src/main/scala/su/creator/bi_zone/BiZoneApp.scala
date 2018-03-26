@@ -23,7 +23,7 @@ object BiZoneApp extends App {
   try main(input, output, interval.toInt)
   catch {
     case NonFatal(e) =>
-      System.err.print(e.getMessage)
+      System.err.print(s"[ERROR] ${e.getMessage}")
       System.exit(1)
   }
 
